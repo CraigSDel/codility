@@ -9,7 +9,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FishTest {
-    Fish fish;
+    private Fish fish;
 
     @BeforeEach
     public void before() {
