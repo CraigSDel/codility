@@ -8,7 +8,7 @@ public class Fish {
     public int howManyFishSurvive(List<Integer> fishSize, List<Integer> fishDirection) {
         // 1 - Upstream
         // 0 - Downstream
-        int survivors = 0;
+        int survivorsSwimmingDownStream = 0;
         Stack<Integer> fishSwimmingUpstream = new Stack();
         for (int i = 0; i < fishDirection.size(); i++) {
             if (fishDirection.get(i) == 1) {
@@ -16,17 +16,20 @@ public class Fish {
                 continue;
             }
             if (fishSwimmingUpstream.isEmpty()) {
-                survivors++;
+                survivorsSwimmingDownStream++;
             } else {
-                int beforeLoop = fishSwimmingUpstream.size();
+                int beforeLoop = fishSwimmingUpstream.size(); //how many fish are in the stack
                 while (!fishSwimmingUpstream.isEmpty() && fishSize.get(i) > fishSwimmingUpstream.peek()) {
-                    fishSwimmingUpstream.pop();
+                    fishSwimmingUpstream.pop(); // remove the fish from the stack
                 }
                 if (fishSwimmingUpstream.size() < beforeLoop) {
-                    survivors++;
+                    survivorsSwimmingDownStream++; // the fish survived
                 }
             }
         }
-        return survivors;
+        if (survivorsSwimmingDownStream == 0 && fishSwimmingUpstream.size() > 0) {
+            survivorsSwimmingDownStream = fishSwimmingUpstream.size();
+        }
+        return survivorsSwimmingDownStream;
     }
 }
