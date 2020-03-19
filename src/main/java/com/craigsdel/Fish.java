@@ -21,7 +21,7 @@ public class Fish {
                 while (!fishSwimmingUpstream.isEmpty() && fishSize.get(i) > fishSwimmingUpstream.peek()) {
                     fishSwimmingUpstream.pop(); // remove the fish from the stack
                 }
-                if (fishSwimmingUpstream.size() == 0) {
+                if (fishSwimmingUpstream.isEmpty()) {
                     survivorsSwimmingDownStream++; // the fish survived
                 }
             }
