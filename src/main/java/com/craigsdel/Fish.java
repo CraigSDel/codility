@@ -18,18 +18,14 @@ public class Fish {
             if (fishSwimmingUpstream.isEmpty()) {
                 survivorsSwimmingDownStream++;
             } else {
-                int beforeLoop = fishSwimmingUpstream.size(); //how many fish are in the stack
                 while (!fishSwimmingUpstream.isEmpty() && fishSize.get(i) > fishSwimmingUpstream.peek()) {
                     fishSwimmingUpstream.pop(); // remove the fish from the stack
                 }
-                if (fishSwimmingUpstream.size() < beforeLoop) {
+                if (fishSwimmingUpstream.size() == 0) {
                     survivorsSwimmingDownStream++; // the fish survived
                 }
             }
         }
-        if (survivorsSwimmingDownStream == 0 && fishSwimmingUpstream.size() > 0) {
-            survivorsSwimmingDownStream = fishSwimmingUpstream.size();
-        }
-        return survivorsSwimmingDownStream;
+        return survivorsSwimmingDownStream + fishSwimmingUpstream.size();
     }
 }
