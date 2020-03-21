@@ -1,6 +1,7 @@
-package com.craigsdel;
+package com.craigsdel.stackAndQueues;
 
 
+import com.craigsdel.stacksAndQueues.Fish;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
