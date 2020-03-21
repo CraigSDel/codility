@@ -15,10 +15,10 @@ public class DominatorTest {
 
     @Test
     public void Test1() {
-        assertEquals(3, dominator.solution(new int[]{3, 0, 1, 1, 4, 1, 1, 10, 1, 12, 2, 10000}));
-        assertEquals(3, dominator.solution(new int[]{3, 0, 1, 1, 4, 1, 1}));
+        assertEquals(9, dominator.solution(new int[]{3, 0, 1, 1, 4, 1, 1, 0, 2, 1}));
+        assertEquals(6, dominator.solution(new int[]{3, 0, 1, 1, 4, 1, 1}));
         assertEquals(-1, dominator.solution(new int[]{1, 2, 3, 4, 5, 6, 7}));
-        assertEquals(1, dominator.solution(new int[]{1, 1, 1}));
+        assertEquals(2, dominator.solution(new int[]{1, 1, 1}));
         assertEquals(1, dominator.solution(new int[]{1, 1}));
     }
 }
